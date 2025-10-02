@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { ThemeChange } from "../../Hooks/DarkLight";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
 
-  const handleShowMenu = () => {
-    setShowMenu(!showMenu);
-  };
+  const handleShowMenu = () => setShowMenu(!showMenu);
 
   const navLinkClass = ({ isActive }) =>
     `cursor-pointer transition ${
-      isActive ? "text-blue-400 font-semibold" : "text-white hover:text-blue-200"
+      isActive
+        ? "text-blue-400 font-semibold"
+        : "text-white hover:text-blue-200"
     }`;
 
   return (
@@ -23,24 +24,30 @@ export default function Header() {
           World-Atlas
         </h1>
 
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-8 text-xl">
-          <NavLink to="/" className={navLinkClass} end>
-            <li>Home</li>
-          </NavLink>
-          <NavLink to="/about" className={navLinkClass}>
-            <li>About</li>
-          </NavLink>
-          <NavLink to="/country" className={navLinkClass}>
-            <li>Country</li>
-          </NavLink>
-          <NavLink to="/contact" className={navLinkClass}>
-            <li>Contact-us</li>
-          </NavLink>
-        </ul>
+        {/* Desktop Nav + Theme Toggle */}
+        <div className="hidden md:flex gap-6 items-center">
+          <ul className="flex gap-8 text-xl">
+            <NavLink to="/" className={navLinkClass} end>
+              <li>Home</li>
+            </NavLink>
+            <NavLink to="/about" className={navLinkClass}>
+              <li>About</li>
+            </NavLink>
+            <NavLink to="/country" className={navLinkClass}>
+              <li>Country</li>
+            </NavLink>
+            <NavLink to="/contact" className={navLinkClass}>
+              <li>Contact-us</li>
+            </NavLink>
+          </ul>
+
+          {/* Theme Toggle Button */}
+          <ThemeChange />
+        </div>
 
         {/* Hamburger / Close Btn */}
-        <div className="md:hidden text-3xl text-white z-50">
+        <div className="md:hidden flex items-center gap-4 text-3xl text-white z-50">
+          <ThemeChange /> {/* mobile toggle */}
           <button onClick={handleShowMenu}>
             {showMenu ? <IoCloseSharp /> : <GiHamburgerMenu />}
           </button>
@@ -67,10 +74,18 @@ export default function Header() {
         <NavLink to="/about" className={navLinkClass} onClick={handleShowMenu}>
           <li>About</li>
         </NavLink>
-        <NavLink to="/country" className={navLinkClass} onClick={handleShowMenu}>
+        <NavLink
+          to="/country"
+          className={navLinkClass}
+          onClick={handleShowMenu}
+        >
           <li>Country</li>
         </NavLink>
-        <NavLink to="/contact" className={navLinkClass} onClick={handleShowMenu}>
+        <NavLink
+          to="/contact"
+          className={navLinkClass}
+          onClick={handleShowMenu}
+        >
           <li>Contact-us</li>
         </NavLink>
       </ul>

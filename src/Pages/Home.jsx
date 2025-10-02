@@ -10,14 +10,14 @@ import AboutApiData from "../Component/ApiData/AboutApiData";
 
 export default function Home() {
   return (
-    <div className="bg-zinc-950 h-full w-full p-10">
+    <div className=" h-full w-full p-10">
       <div className="max-w-5xl min-w-[20rem] m-auto">
         {/* grid for image and Slogan */}
         <div className="grid justify-center items-center grid-row md:grid-cols-2 mt-4">
           <div className="md:ml-20 md:order-2">
-            <img className="w-7xl mt-5 md:mt-0" src={image} alt="" />
+            <img className="w-xl mt-5 md:mt-0" src={image} alt="" />
           </div>
-          <div className="text-white text-center md:order-1">
+          <div className=" text-center md:order-1">
             <h1 className="text-3xl md:text-5xl mb-8">
               Discover the World at Your Fingertips
             </h1>
