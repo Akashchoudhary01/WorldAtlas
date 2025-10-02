@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "India",
+    "capital": "New Delhi",
+    "population": "1.4 Billion",
+    "main_festival": "Diwali",
+    "interesting_fact": "India has the world's largest democracy."
+  },
+  {
+    "id": 2,
+    "name": "Japan",
+    "capital": "Tokyo",
+    "population": "125 Million",
+    "main_festival": "Cherry Blossom Festival",
+    "interesting_fact": "Japan has more than 5 million vending machines."
+  },
+  {
+    "id": 3,
+    "name": "Brazil",
+    "capital": "Brasília",
+    "population": "214 Million",
+    "main_festival": "Carnival",
+    "interesting_fact": "Brazil is home to the Amazon Rainforest, the largest in the world."
+  },
+  {
+    "id": 4,
+    "name": "Egypt",
+    "capital": "Cairo",
+    "population": "110 Million",
+    "main_festival": "Sham El-Nessim",
+    "interesting_fact": "The Great Pyramid of Giza is the last surviving Ancient Wonder."
+  },
+  {
+    "id": 5,
+    "name": "France",
+    "capital": "Paris",
+    "population": "68 Million",
+    "main_festival": "Bastille Day",
+    "interesting_fact": "France is the most visited country in the world."
+  },
+  {
+    "id": 6,
+    "name": "Australia",
+    "capital": "Canberra",
+    "population": "26 Million",
+    "main_festival": "Australia Day",
+    "interesting_fact": "Australia has more kangaroos than people."
+  },
+  {
+    "id": 7,
+    "name": "Canada",
+    "capital": "Ottawa",
+    "population": "39 Million",
+    "main_festival": "Canada Day",
+    "interesting_fact": "Canada has the longest coastline in the world."
+  },
+  {
+    "id": 8,
+    "name": "Mexico",
+    "capital": "Mexico City",
+    "population": "129 Million",
+    "main_festival": "Día de los Muertos (Day of the Dead)",
+    "interesting_fact": "Chocolate originated in Mexico with the ancient Aztecs."
+  },
+  {
+    "id": 9,
+    "name": "South Africa",
+    "capital": "Pretoria (administrative)",
+    "population": "61 Million",
+    "main_festival": "Heritage Day",
+    "interesting_fact": "South Africa is nicknamed the 'Rainbow Nation' for its cultural diversity."
+  },
+  {
+    "id": 10,
+    "name": "Italy",
+    "capital": "Rome",
+    "population": "59 Million",
+    "main_festival": "Venice Carnival",
+    "interesting_fact": "Italy has more UNESCO World Heritage sites than any other country."
+  },
+  {
+    "id": 11,
+    "name": "China",
+    "capital": "Beijing",
+    "population": "1.41 Billion",
+    "main_festival": "Chinese New Year",
+    "interesting_fact": "China has the world’s longest wall, stretching over 21,000 km."
+  },
+  {
+    "id": 12,
+    "name": "United States",
+    "capital": "Washington, D.C.",
+    "population": "333 Million",
+    "main_festival": "Thanksgiving",
+    "interesting_fact": "The U.S. has the largest economy in the world."
+  }
+]
