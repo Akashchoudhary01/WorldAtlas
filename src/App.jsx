@@ -1,8 +1,8 @@
 import React from "react";
-import { router } from "./Components/Router/Router";
+import { router } from "./Component/Router/Router";
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import Layout from "./Components/Outlet/Layout";
+import Layout from "./Component/Outlet/Layout";
 
 export default function App() {
   return (

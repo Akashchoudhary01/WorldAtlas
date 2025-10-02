@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useTransition } from "react";
-import { getCountryData } from "../api/CountryApi/CountryApi";
+import { getCountryData } from "../../Api/Country/CountryApi";
 import CountryCard from "./CountryCard";
 import Loading from "../../Component/Ui/Loading/Loading";
 import CountrySearchFilter from "../../Component/Ui/CountrySearchFilter";
