@@ -69,9 +69,6 @@ https://world-atlas-black-xi.vercel.app/country
 
 ---
 
-## 🛠️ Project Structure (Sample)
-
-
 src/
 ├── App.jsx
 ├── index.jsx
@@ -89,7 +86,6 @@ src/
 └── assets/
     ├── logos/
     └── images/
----
 
 ## 👤 Author
 
