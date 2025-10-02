@@ -3,11 +3,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from '../../Pages/Home';
 import About from "../../Pages/About";
 import Contact from "../../Pages/Contact";
-import Country from "../../Pages/Country";
+import Country from "../../Pages/Country/Country";
 // import Header from "../Ui/Header";
 import Layout from "../Outlet/Layout";
 import ErrorPage from "../../Pages/ErrorPage";
-import CountryDetails from "../../Pages/CountryDetails";
+import CountryDetails from "../../Pages/Country/CountryDetails";
 
 export const router = createBrowserRouter([
   {

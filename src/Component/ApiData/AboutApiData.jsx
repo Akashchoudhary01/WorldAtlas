@@ -1,4 +1,4 @@
-import Api from "../../api/api.json";
+import Api from "../../Api/Api.json";
 
 export default function AboutApiData() {
   return (
