@@ -1,12 +1,105 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🌍 World Atlas
 
-Currently, two official plugins are available:
+[Live Demo :  https://world-atlas-black-xi.vercel.app/country]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, responsive web app built with **React + Vite** and **Tailwind CSS**, using a **REST Countries API** to let users explore information about countries globally.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- 🔎 **Search & Filter** — Quickly find countries by name or region  
+- 🌑 **Dark / Light Mode** — Toggle theme for better readability  
+- 🌐 **Country Details** — View capitals, population, languages, currencies, flags & maps  
+- 📱 **Responsive Design** — Works seamlessly across mobile, tablet & desktop  
+- 🔄 **Live Data Fetching** — Uses REST API for real-time country data  
+
+---
+
+## 🧱 Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend | React with Vite |
+| Styling | Tailwind CSS |
+| Data | REST Countries API |
+| Routing | React Router DOM |
+| Hosting | Vercel |
+
+---
+
+## 📝 Usage
+
+### Clone & Install
+
+```bash
+git clone https://github.com/Akashchoudhary01/world-atlas.git
+cd world-atlas
+npm install
+````
+
+### Run in Development Mode
+
+```bash
+npm run dev
+```
+
+
+### Build & Deploy
+
+```bash
+npm run build
+```
+
+Use `dist/` for deployment. Already hosted at 
+
+https://world-atlas-black-xi.vercel.app/country
+
+---
+
+## 🎨 Usage Examples & Screenshots
+
+*Add screenshots or GIFs here*
+*e.g.*
+
+* Search page
+* Country detail page
+* Dark mode vs Light mode
+
+---
+
+## 🛠️ Project Structure (Sample)
+
+
+src/
+├── App.jsx
+├── index.jsx
+├── components/
+│   ├── Header.jsx
+│   ├── Footer.jsx
+│   ├── CountrySearchFilter.jsx
+│   └── CountryCard.jsx
+├── pages/
+│   ├── Home.jsx
+│   ├── Country.jsx
+│   └── Contact.jsx
+├── hooks/
+│   └── DarkLight.js
+└── assets/
+    ├── logos/
+    └── images/
+---
+
+## 👤 Author
+
+Made with ❤️ by **Akash**
+[LinkedIn](https://www.linkedin.com/in/akashchoudhary007/)
+
+---
+
+## 📄 License
+
+This project is free to use and modify — feel free to adapt it for your own learning or projects.
+
+---
