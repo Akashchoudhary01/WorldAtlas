@@ -1,10 +1,14 @@
-import React from "react";
-import {NavLink} from 'react-router-dom'
+import React, { useContext } from "react";
+import { ThemeContext } from "../../Hooks/DarkLight";
+import { NavLink } from "react-router-dom";
 export default function CountryCard({ country }) {
   const { flags, name, population, capital, region } = country;
 
+  const { theme } = useContext(ThemeContext);
   return (
-    <li className="flex flex-col rounded-lg overflow-hidden shadow-lg bg-gray-800 text-white transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <li className={`flex flex-col rounded-lg overflow-hidden shadow-lg  transition-transform duration-300 hover:scale-105 hover:shadow-xl ${
+        theme === "dark" ? "bg-zinc-950 text-white" : "bg-white outline-1 outline-black text-black"
+      }`}>
       {/* Flag Image Section */}
       <div className="relative w-full h-40 overflow-hidden">
         <img
@@ -22,7 +26,8 @@ export default function CountryCard({ country }) {
         {/* Details List */}
         <ul className="text-sm font-light space-y-1">
           <li>
-            <span className="font-semibold">Population:</span> {population.toLocaleString()}
+            <span className="font-semibold">Population:</span>{" "}
+            {population.toLocaleString()}
           </li>
           <li>
             <span className="font-semibold">Region:</span> {region}
@@ -32,8 +37,9 @@ export default function CountryCard({ country }) {
           </li>
         </ul>
         <NavLink to={`/country/${name.common}`}>
-      <button className="px-3 pt-.8 text-sm rounded-md m-auto p-2 outline-1">Show more</button>
-
+          <button className="px-3 pt-.8 text-sm rounded-md m-auto p-2 outline-1">
+            Show more
+          </button>
         </NavLink>
       </div>
     </li>

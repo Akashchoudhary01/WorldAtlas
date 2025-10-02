@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useTransition } from "react";
+import React, { useState, useEffect, useTransition  } from "react";
 import { getCountryData } from "../../Api/Country/CountryApi";
 import CountryCard from "./CountryCard";
 import Loading from "../../Component/Ui/Loading/Loading";
 import CountrySearchFilter from "../../Component/Ui/CountrySearchFilter";
 
+
 export default function Country() {
+ 
   const [countries, setCountries] = useState([]);
   const [isPending, startTransition] = useTransition();
   const [search, setSearch] = useState();
@@ -54,7 +56,7 @@ export default function Country() {
   const shortedCountries = countries.filter((country)=> searchCountry(country) && filterRegion(country));
 
   return (
-    <div className="bg-zinc-950 h-full text-white w-full p-10">
+    <div className="h-full w-full p-10">
       <div className="max-w-5xl min-w-[20rem] m-auto">
         <h1 className="text-2xl font-bold mb-6">Country List</h1>
         {/* Search fild */}

@@ -1,12 +1,14 @@
-import React, { useEffect, useState, useTransition } from "react";
+import React, { useContext, useEffect, useState, useTransition } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { getCountryDetails } from "../../Api/Country/CountryApi";
 import Loading from "../../Component/Ui/Loading/Loading";
+import { ThemeContext } from "../../Hooks/DarkLight";
 
 export default function CountryDetails() {
   const { id } = useParams();
   const [country, setCountry] = useState();
   const [isPending, startTransition] = useTransition();
+  const {theme} = useContext(ThemeContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,23 +28,27 @@ export default function CountryDetails() {
 
   if (isPending) {
     return (
-      <div className="h-screen flex items-center justify-center bg-zinc-950 text-white">
+      <div className="h-screen flex items-center justify-center">
         <Loading />
       </div>
     );
   }
 
   return (
-    <div className="bg-zinc-950 min-h-screen text-white p-8">
+    <div className={` min-h-screen  ${
+        theme === "dark" ? "bg-zinc-950 text-white" : "bg-white text-black"
+      } `}>
       <div className="max-w-5xl mx-auto">
         {country && (
-          <div className="flex flex-col md:flex-row mt-16 gap-8 items-center md:items-start">
+          <div className={`flex flex-col md:flex-row py-12 px-12 rounded-xl mt-16 gap-8 items-center md:items-start ${theme == "light" ? "bg-amber-50" : "bg-gray-900"}`}>
             {/* Flag */}
             <div className="w-full md:w-1/2 flex justify-center">
               <img
                 src={country.flags?.svg}
                 alt={`Flag of ${country.name?.common}`}
-                className="w-full max-w-sm md:max-w-md rounded-lg shadow-md outline-1 outline-white object-contain"
+                className={`w-full max-w-sm md:max-w-md rounded-lg shadow-md outline-1  object-contain ${
+        theme === "dark" ? " outline-white" :  "outline-black"
+      }` }
               />
             </div>
 
@@ -107,7 +113,7 @@ export default function CountryDetails() {
         {/* Back btn */}
         <div className="flex items-center justify-center p-8 md:justify-start">
           <NavLink to="/country">
-            <button className="px-4 py-1 border-1 border-amber-50 rounded-xl text-xl ">
+            <button className={`px-4 py-1 border-1 border-amber-50 rounded-xl text-xl ${theme == "dark" ? "border-amber-50": "border-black"}`} >
               Back
             </button>
           </NavLink>
