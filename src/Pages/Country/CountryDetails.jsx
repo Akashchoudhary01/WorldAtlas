@@ -36,7 +36,7 @@ export default function CountryDetails() {
 
   return (
     <div className={` min-h-screen  ${
-        theme === "dark" ? "bg-zinc-950 text-white" : "bg-white text-black"
+        theme === "dark" ? " text-white" : " text-black"
       } `}>
       <div className="max-w-5xl mx-auto">
         {country && (

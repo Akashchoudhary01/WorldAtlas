@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { ThemeChange } from "../../Hooks/DarkLight";
+import { ThemeChange, ThemeContext } from "../../Hooks/DarkLight";
 
 export default function Header() {
+  const { theme } = useContext(ThemeContext);
   const [showMenu, setShowMenu] = useState(false);
 
   const handleShowMenu = () => setShowMenu(!showMenu);
@@ -13,6 +14,8 @@ export default function Header() {
     `cursor-pointer transition ${
       isActive
         ? "text-blue-400 font-semibold"
+        : theme === "light"
+        ? "text-black hover:text-blue-500"
         : "text-white hover:text-blue-200"
     }`;
 
@@ -27,18 +30,26 @@ export default function Header() {
         {/* Desktop Nav + Theme Toggle */}
         <div className="hidden md:flex gap-6 items-center">
           <ul className="flex gap-8 text-xl">
-            <NavLink to="/" className={navLinkClass} end>
-              <li>Home</li>
-            </NavLink>
-            <NavLink to="/about" className={navLinkClass}>
-              <li>About</li>
-            </NavLink>
-            <NavLink to="/country" className={navLinkClass}>
-              <li>Country</li>
-            </NavLink>
-            <NavLink to="/contact" className={navLinkClass}>
-              <li>Contact-us</li>
-            </NavLink>
+            <li>
+              <NavLink to="/" className={navLinkClass} end>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className={navLinkClass}>
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/country" className={navLinkClass}>
+                Country
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" className={navLinkClass}>
+                Contact-us
+              </NavLink>
+            </li>
           </ul>
 
           {/* Theme Toggle Button */}
@@ -48,15 +59,15 @@ export default function Header() {
         {/* Hamburger / Close Btn */}
         <div className="md:hidden flex items-center gap-4 text-3xl text-white z-50">
           <ThemeChange /> {/* mobile toggle */}
-          <button onClick={handleShowMenu}>
-            {showMenu ? <IoCloseSharp /> : <GiHamburgerMenu />}
+          <button onClick={handleShowMenu} aria-label="Toggle Menu">
+            {showMenu ? <IoCloseSharp  /> : <GiHamburgerMenu />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 transition-opacity duration-300 ${
+        className={`fixed top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
           showMenu ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={handleShowMenu}
@@ -64,30 +75,30 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <ul
-        className={`md:hidden fixed top-0 right-0 h-full bg-zinc-900 shadow-xl w-60 flex flex-col gap-8 py-10 px-6 transform transition-transform duration-500 z-50 ${
+        className={`md:hidden fixed top-0 right-0 h-[40%] shadow-xl w-50 flex flex-col gap-8 py-10 px-6 transform transition-transform duration-500 z-50 ${
           showMenu ? "translate-x-0" : "translate-x-full"
-        }`}
+        } ${theme === "light" ? "bg-white text-black" : "bg-gray-800 text-white"}`}
       >
-        <NavLink to="/" className={navLinkClass} end onClick={handleShowMenu}>
-          <li>Home</li>
-        </NavLink>
-        <NavLink to="/about" className={navLinkClass} onClick={handleShowMenu}>
-          <li>About</li>
-        </NavLink>
-        <NavLink
-          to="/country"
-          className={navLinkClass}
-          onClick={handleShowMenu}
-        >
-          <li>Country</li>
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={navLinkClass}
-          onClick={handleShowMenu}
-        >
-          <li>Contact-us</li>
-        </NavLink>
+        <li>
+          <NavLink to="/" className={navLinkClass} end onClick={handleShowMenu}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" className={navLinkClass} onClick={handleShowMenu}>
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/country" className={navLinkClass} onClick={handleShowMenu}>
+            Country
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className={navLinkClass} onClick={handleShowMenu}>
+            Contact-us
+          </NavLink>
+        </li>
       </ul>
     </header>
   );

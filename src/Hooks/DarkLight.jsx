@@ -34,7 +34,7 @@ export const ThemeChange = () => {
     <button
       onClick={handleToggleButton}
       className="flex justify-end items-center  p-3 rounded-full shadow-lg 
-                  text-white  transition"
+                  text-white text-xl  transition"
     >
       {theme === "dark" ? <LuSun /> : <FaRegMoon />}
     </button>

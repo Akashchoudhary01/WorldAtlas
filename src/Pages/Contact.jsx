@@ -1,26 +1,25 @@
 import React from "react";
 
-
 export default function Contact() {
-
-  const handelFormSubmit = (formData , e)=>{
+  const handleFormSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
     const formInputData = Object.fromEntries(formData.entries());
     console.log(formInputData);
-    
-    
-  }
+  };
+
   return (
-    <div id="contact" className=" h-full w-full p-10">
-      <div className="max-w-2xl min-w-[20rem] m-auto">
+    <div id="contact" className="h-full w-full   p-10">
+      <div className="max-w-2xl min-w-[20rem]   pb-32 m-auto">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
+
         <form
-          className="flex flex-col gap-4 w-full  p-6 rounded-xl shadow-md"
-          action={()=> handelFormSubmit}
+          onSubmit={handleFormSubmit}
+          className="flex flex-col gap-4 w-full p-6 rounded-xl shadow-md bg-zinc-900"
         >
           {/* Name */}
           <input
-            className="w-full px-4 py-2 rounded-lg bg-zinc-400  border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 rounded-lg bg-zinc-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="text"
             required
             autoComplete="off"
@@ -54,7 +53,6 @@ export default function Contact() {
             Send Message
           </button>
         </form>
-        
       </div>
     </div>
   );
