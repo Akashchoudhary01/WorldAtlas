@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useTransition } from "react";
 import { getCountryData } from "../api/CountryApi/CountryApi";
 import CountryCard from "./CountryCard";
-import Loading from "../Components/Ui/Loading/Loading";
-import CountrySearchFilter from "../Components/Ui/CountrySearchFilter";
+import Loading from "../../Component/Ui/Loading/Loading";
+import CountrySearchFilter from "../../Component/Ui/CountrySearchFilter";
 
 export default function Country() {
   const [countries, setCountries] = useState([]);

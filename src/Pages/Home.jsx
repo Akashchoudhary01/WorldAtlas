@@ -2,7 +2,8 @@ import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
-import image from "../assets/unnamed.png";
+import image from "../assets/bg1.png";
+// import image2 from "../assets/bg2.png";
 
 import AboutApiData from "../Components/ApiData/AboutApiData";
 

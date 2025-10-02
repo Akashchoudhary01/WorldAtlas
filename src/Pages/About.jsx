@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutApiData from '../Components/ApiData/AboutApiData'
+import AboutApiData from '../Component/ApiData/AboutApiData'
 
 export default function About() {
   return (
