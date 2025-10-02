@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
@@ -6,9 +6,10 @@ import image from "../assets/bg1.png";
 // import image2 from "../assets/bg2.png";
 
 import AboutApiData from "../Component/ApiData/AboutApiData";
-
+import { ThemeContext } from "../Hooks/DarkLight";
 
 export default function Home() {
+  const { theme } = useContext(ThemeContext);
   return (
     <div className=" h-full w-full p-10">
       <div className="max-w-5xl min-w-[20rem] m-auto">
@@ -29,9 +30,15 @@ export default function Home() {
 
             {/* Button */}
             <div className="flex justify-center md:justify-start mt-6">
-              <NavLink to='/country'>
-
-                <button className="flex items-center gap-2 outline-1 hover:bg-gradient-to-l from-black via-gray-700 to-black-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300">
+              <NavLink to="/country">
+                <button
+                  className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 
+                      ${
+                        theme === "dark"
+                          ? "bg-gradient-to-l from-black via-gray-700 to-gray-900 text-white outline outline-1 outline-white"
+                          : "bg-amber-50 text-black border border-black"
+                      }`}
+                >
                   Start Explore <FaArrowRightLong className="text-lg" />
                 </button>
               </NavLink>
@@ -40,7 +47,7 @@ export default function Home() {
         </div>
 
         {/*country Details */}
-        <AboutApiData/>
+        <AboutApiData />
       </div>
     </div>
   );

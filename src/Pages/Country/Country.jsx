@@ -30,8 +30,8 @@ export default function Country() {
 
   if (isPending) {
     return (
-      <div className="h-lvh flex items-center justify-center">
-        <Loading />
+      <div className="h-lvh flex items-center  justify-center">
+        <Loading/>
         {/* <h2>Loading...</h2> */}
       </div>
     );

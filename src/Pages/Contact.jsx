@@ -11,16 +11,16 @@ export default function Contact() {
     
   }
   return (
-    <div id="contact" className="bg-zinc-950 h-full w-full p-10">
-      <div className="max-w-2xl min-w-[20rem] text-white m-auto">
+    <div id="contact" className=" h-full w-full p-10">
+      <div className="max-w-2xl min-w-[20rem] m-auto">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
         <form
-          className="flex flex-col gap-4 w-full bg-zinc-900 p-6 rounded-xl shadow-md"
+          className="flex flex-col gap-4 w-full  p-6 rounded-xl shadow-md"
           action={()=> handelFormSubmit}
         >
           {/* Name */}
           <input
-            className="w-full px-4 py-2 rounded-lg bg-zinc-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 rounded-lg bg-zinc-400  border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="text"
             required
             autoComplete="off"

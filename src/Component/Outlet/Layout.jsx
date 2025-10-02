@@ -10,7 +10,7 @@ export default function Layout() {
   return (
     <div
       className={`min-h-screen ${
-        theme === "dark" ? "bg-zinc-950 text-white" : "bg-white text-black"
+        theme === "dark" ? "bg-zinc-700 text-white" : "bg-white text-black"
       } transition-colors duration-500`}
     >
       <Header />
